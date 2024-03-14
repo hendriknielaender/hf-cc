@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Checkbox</title>
+<style>
+  .checkbox-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Show/Hide native checkbox */
+  .native-checkbox {
+    opacity: 1;
+    position: absolute;
+    z-index: 99;
+  }
+
+  .custom-checkbox {
+    margin-top: 24px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #000;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .native-checkbox:checked + .custom-checkbox svg {
+    display: block;
+  }
+
+  .custom-checkbox svg {
+    display: none;
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Apply focus-visible for keyboard navigation only, reducing visual clutter */
+  .native-checkbox:focus-visible + .custom-checkbox {
+    outline: 2px solid blue;
+    outline-offset: 2px;
+  }
+    .native-checkbox:checked + .custom-checkbox {
+  background-color: black; /* Background to black when checked */
+}
+.native-checkbox:checked + .custom-checkbox svg {
+  color: white;
+  display: block; /* Show SVG when checked */
+  stroke: white; /* SVG stroke to white when checked */
+}
+</style>
+
+</head>
+<body>
+
+<div class="checkbox-container">
+  <input type="checkbox" id="checkbox" class="native-checkbox">
+  <label for="checkbox" class="custom-checkbox">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+      <rect width="256" height="256" fill="none"></rect>
+      <polyline
+      points="216 72.005 104 184 48 128.005"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16">
+      </polyline>
+    </svg>
+  </label>
+</div>
+
+</body>
+</html>
+
