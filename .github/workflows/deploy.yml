@@ -23,7 +23,9 @@ jobs:
       - name: Use Bun
         uses: oven-sh/setup-bun@v1
       - name: Install, build, and upload your site
-        run: cd part2 && bun install && bun run build
+        run: |
+            cd part2 && bun install && bun run build
+            cp -r ../part1 ${{ github.workspace }}/part2/dist/part1
       - name: Upload your site to GitHub Pages
         uses: actions/upload-pages-artifact@v2
         with:
