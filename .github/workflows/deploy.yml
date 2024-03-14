@@ -27,7 +27,7 @@ jobs:
       - name: Upload your site to GitHub Pages
         uses: actions/upload-pages-artifact@v2
         with:
-          path: dist/
+          path: part2/dist/
  
   deploy:
     needs: build
